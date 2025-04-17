@@ -1,0 +1,113 @@
+/* General Styles */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #caa862;
+  color: #333333;
+  padding: 20px;
+  margin: 0;
+}
+
+header {
+  text-align: center;
+  background: #0d1213ee;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(182, 209, 28, 0.1);
+}
+
+h1, h2 {
+  color: #070707;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* Section Styles */
+section {
+  display: flex;
+  flex-direction: column; /* Stack children elements vertically */
+  align-items: center; /* Center align items */
+  margin-top: 30px;
+  padding: 20px;
+  background: #f7f7f7;
+  border-left: 6px solid #8bc34a;
+  border-radius: 10px;
+  width: 90%; /* Set a width to maintain alignment */
+  max-width: 800px; /* Limit the maximum width */
+}
+
+/* Button Styles */
+button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  font-size: 13px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgb(54, 215, 236);
+  color: rgb(14, 13, 13);
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background-color: #ffd700;
+}
+
+/* Input and Textarea Styles */
+input[type="text"],
+input[type="file"],
+textarea {
+  width: 90%;
+  max-width: 500px; /* Set maximum width for inputs */
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #ccc;
+  margin-top: 30px; /* Space above footer */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between images */
+}
+
+.footer-image {
+  width: 600px; /* Smaller size for footer images */
+  height: 400;
+}
+
+/* Popup Styles */
+.popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #fff;
+  border: 2px solid #ccc;
+  padding: 20px;
+  z-index: 999;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.popup-content {
+  text-align: center;
+  background-color: lightyellow; /* Makes content visible */
+  padding: 10px;
+  margin: 5px;
+}
+
+.hidden {
+  display: none;
+}

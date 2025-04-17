@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌟🎄Family Holiday Communion 👨‍👩‍👧‍👦🎄🌟</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+    }
+
+    .entry-page {
+      margin-top: 60px;
+    }
+
+    .entry-image {
+      width: 200px;
+      height: auto;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .entry-image:hover {
+      transform: scale(1.05);
+    }
+
+    .caption {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #444;
+    }
+  </style>
+
+
+<body>
+<!-- 🎶 Hymn Audio Player -->
+<audio id="hymn" autoplay loop>
+  <source src="audio/hidungeru.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+<script>
+  // Automatically play and loop the hymn
+  document.getElementById('hymn').play();
+</script>
+  <header style="text-align: center; padding: 20px; background-color: #f0f8ff;">
+    <h1>🎄 🌟 Grace & Glory: Celebrating with Lord Jesus  🌟 🎄 </h1>
+    <h2><strong>How good and pleasant it is when God’s people live together in unity!⛪👨‍👩‍👧‍👦 - Psalm 133:1</strong></h2>
+    <p><em></p>
+    <!-- Add the image at the top -->
+    <img src="images/cross.jpg" alt="Lord Jesus Banner" style="width: 60%; max-height: 500px; object-fit: fill; border-radius: 10px;"> 
+  </header>
+  
+  <style>
+    body {
+      background: linear-gradient(to top, #fefcea, #f1da36);
+      font-family: "Georgia", serif;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #7c4700;
+      font-size: 2.5em;
+    }
+    .poem {
+      margin: 30px auto;
+      font-size: 1.3em;
+      color: #333;
+      max-width: 600px;
+    }
+    .stanza {
+      display: none;
+      margin-bottom: 20px;
+      transition: all 0.5s ease;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #ffd700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #ffcc00;
+    }
+    .verse {
+      font-style: italic;
+      margin-top: 40px;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌅  He Is Risen  ✝️</h1>
+
+  <div class="poem">
+    <div class="stanza">🌟 He rose with glory, broke the grave,<br/>Our souls He came to seek and save.</div>
+    <div class="stanza">🕊️ The stone rolled back, the tomb now bare,<br/>Hope fills the heavens, love fills the air.</div>
+    <div class="stanza">👑 Crowned with thorns, yet crowned above,<br/>He reigns forever, King of Love.</div>
+    <div class="stanza">🔥 Death defeated, sin undone,<br/>New life begins with God’s own Son.</div>
+    <div class="stanza">🙌 Rejoice! The Lamb is risen indeed!<br/>He is all we ever need.</div>
+  </div>
+
+  <button onclick="showNext()">Show Next ✨</button>
+
+  <div class="verse">
+    <strong>James 4:15 —</strong> <em>“If the Lord wills, we will live and do this or that.”</em>
+  </div>
+
+  <script>
+    let index = 0;
+    const stanzas = document.querySelectorAll('.stanza');
+
+    function showNext() {
+      if (index < stanzas.length) {
+        stanzas[index].style.display = 'block';
+        index++;
+        if (index === stanzas.length) {
+          document.querySelector('button').textContent = "He is Risen! ✝️🎉";
+          document.querySelector('button').disabled = true;
+        }
+      }
+    }
+  </script>
+</body>
+</html>
+
+  <section id="holiday-wishes">
+    <h2>🪔 Holiday Wishes 📝</h2>
+    <p>Send love and peace to your family 💖</p>
+    <input type="text" id="wishName" placeholder="Your Name" />
+    <br />
+    <textarea id="wishMessage" placeholder="Your holiday wish..."></textarea>
+    <br />
+    <button onclick="postWish()">Send Wish</button>
+    <ul id="wishList"></ul>
+  </section>
+
+  <script>
+    // Function to post holiday wish
+    function postWish() {
+      const name = document.getElementById('wishName').value.trim();
+      const message = document.getElementById('wishMessage').value.trim();
+
+      if (!name || !message) {
+        alert('Please enter both name and message.');
+        return;
+      }
+
+      const li = document.createElement('li');
+      const content = document.createElement('span');
+      content.innerText = `${name}: ${message}`;
+
+      // Edit Button
+      const editBtn = document.createElement('button');
+      editBtn.innerText = '✏️ Edit';
+      editBtn.onclick = () => {
+        const newMessage = prompt('Edit your wish:', message);
+        if (newMessage !== null && newMessage.trim()) {
+          content.innerText = `${name}: ${newMessage.trim()}`;
+        }
+      };
+
+      // Delete Button
+      const deleteBtn = document.createElement('button');
+      deleteBtn.innerText = '🗑️ Delete';
+      deleteBtn.onclick = () => {
+        li.remove();
+      };
+
+      li.appendChild(content);
+      li.appendChild(document.createTextNode(' '));
+      li.appendChild(editBtn);
+      li.appendChild(document.createTextNode(' '));
+      li.appendChild(deleteBtn);
+
+      document.getElementById('wishList').appendChild(li);
+
+      // Clear inputs
+      document.getElementById('wishName').value = '';
+      document.getElementById('wishMessage').value = '';
+    }
+  </script>
+
+  <!-- Replace the existing #message-wall and #appreciation sections and their <script> tags with this -->
+
+<section id="message-wall">
+  <h2>📜 Words of Blessing</h2>
+  <p>Post your holiday messages and prayerful thoughts 🙏</p>
+  <input type="text" id="blessName" placeholder="Your Name" />
+  <br />
+  <textarea id="blessInput" placeholder="Write your blessing..."></textarea><br />
+  <button onclick="postBlessing()">📨 Send</button>
+  <ul id="messageList"></ul>
+</section>
+
+<section id="appreciation">
+  <h2>🧡 Family Appreciation</h2>
+  <input type="text" id="appreciationName" placeholder="Your Name" />
+  <br />
+  <textarea id="appreciationInput" placeholder="Write a note of love, forgiveness, or joy..."></textarea><br />
+  <button onclick="postAppreciation()">📨 Send</button>
+  <ul id="appreciationList"></ul>
+</section>
+
+<script>
+  function createListItem(name, message, listId) {
+    const li = document.createElement('li');
+    const content = document.createElement('span');
+    content.innerText = `${name}: ${message}`;
+
+    const editBtn = document.createElement('button');
+    editBtn.innerText = '✏️ Edit';
+    editBtn.onclick = () => {
+      const newMessage = prompt('Edit your message:', message);
+      if (newMessage !== null && newMessage.trim()) {
+        content.innerText = `${name}: ${newMessage.trim()}`;
+      }
+    };
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.innerText = '🗑️ Delete';
+    deleteBtn.onclick = () => {
+      li.remove();
+    };
+
+    li.appendChild(content);
+    li.appendChild(document.createTextNode(' '));
+    li.appendChild(editBtn);
+    li.appendChild(document.createTextNode(' '));
+    li.appendChild(deleteBtn);
+
+    document.getElementById(listId).appendChild(li);
+  }
+
+  function postBlessing() {
+    const name = document.getElementById('blessName').value.trim();
+    const message = document.getElementById('blessInput').value.trim();
+    if (!name || !message) {
+      alert('Please enter both name and message.');
+      return;
+    }
+    createListItem(name, message, 'messageList');
+    document.getElementById('blessName').value = '';
+    document.getElementById('blessInput').value = '';
+  }
+
+  function postAppreciation() {
+    const name = document.getElementById('appreciationName').value.trim();
+    const message = document.getElementById('appreciationInput').value.trim();
+    if (!name || !message) {
+      alert('Please enter both name and message.');
+      return;
+    }
+    createListItem(name, message, 'appreciationList');
+    document.getElementById('appreciationName').value = '';
+    document.getElementById('appreciationInput').value = '';
+  }
+</script>
+
+  <section id="photo-upload">
+    <h2>📸 Share Your Holiday Picture</h2>
+    <p>Upload joyful memories and family smiles!</p>
+    <input type="file" id="imageInput" accept="image/*" onchange="previewImage()" />
+    <div id="gallery"></div>
+  </section>
+
+  <script>
+    // Preview uploaded images
+    function previewImage() {
+      const file = document.getElementById('imageInput').files[0];
+      const gallery = document.getElementById('gallery');
+      const reader = new FileReader();
+
+      reader.onload = function(e) {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.style.maxWidth = '200px';
+        gallery.appendChild(img);
+      };
+
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    }
+  </script>
+
+  <section id="photo-gallery">
+    <h2>📷 Family Photo Album</h2>
+    <p>📸 Rejoice in the precious memories God has given us — all for His glory! 📸</p>
+
+    <label for="photoUpload" style="display: inline-block; padding: 10px 15px; background-color: #eee; border: 1px solid #ccc; cursor: pointer;">
+      📤 Upload Photo
+    </label>
+    <input type="file" id="photoUpload" accept="image/*" style="display: none;" onchange="uploadPhoto()">
+  </section>    
+
+  <script>
+    // Upload photos for the family album
+    function uploadPhoto() {
+      const photoInput = document.getElementById('photoUpload');
+      const file = photoInput.files[0];
+      const reader = new FileReader();
+
+      reader.onload = function(e) {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.style.maxWidth = '200px';
+        img.style.margin = '10px';
+        document.getElementById('photo-gallery').appendChild(img);
+      };
+
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    }
+  </script>
+
+<footer style="background-color: #f0f8ff; text-align: center; padding: 20px; font-family: 'Arial', sans-serif; font-size: 1.2rem; color: #333; border-top: 2px solid #ccc;">
+  <div class="footer-content">
+    <img src="images/Lord.jpg" alt="Image 1" class="footer-image">
+  </div>
+  <p style="font-weight: bold; font-style: italic;">📜 Curated by Matyas — Inspired by Christ, assisted by AI, and, if the Lord wills and I live, I will try to lean less on tools and more on His wisdom. Glory to Jesus Forever! 💫</p>
+  <p style="font-size: 1.1rem; color: #555; font-style: italic;"> 💫 Proverbs 16:3 — "Commit thy works unto the Lord, and thy thoughts shall be established."✝️</p>
+
+  <footer style="background-color: #f3f4f6; padding: 20px; text-align: center; font-family: sans-serif;">
+  
+    <div style="margin: 10px 0; font-family: Arial, sans-serif;">
+      <strong>📢 Telegram Channel:</strong><br>
+      <a href="https://t.me/Mchidofjesus" target="_blank" style="color: #2563eb; text-decoration: none;">
+        🔗 <b>t.me/MchildofJesus</b> – Feel free to reach out with suggestions 🤝
+      </a><br>
+      <span style="color: #4b5563; font-weight: bold;">💳 Account Number: 1000231391146</span>
+    </div>
+       
+</footer>
+
+</body>
+</html>    

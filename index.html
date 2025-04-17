@@ -1,0 +1,59 @@
+<!DOCTYPE html> <!-- ✅ Declares HTML5 document type -->
+
+<html lang="en"> <!-- ✅ Starts the HTML document with English language -->
+
+<head>
+  <meta charset="UTF-8" /> <!-- ✅ Supports all characters (like emojis ✨) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- ✅ Responsive design on all screens -->
+
+  <title>🌟 Happy Easter</title> <!-- ✅ Page title shown in browser tab -->
+
+  <link rel="stylesheet" href="css/style.css" /> <!-- ✅ External CSS (make sure the path is correct!) -->
+
+  <style>
+    /* ✅ Internal CSS for basic layout and hover effect */
+
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+    }
+
+    .entry-page {
+      margin-top: 60px;
+    }
+
+    .entry-image {
+      width: 400px;
+      height: 500px;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .entry-image:hover {
+      transform: scale(1.05); /* ✅ Smooth zoom effect on hover */
+    }
+
+    .caption {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #444;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ✅ Main content starts here -->
+  <div class="entry-page">
+    <a href="main.html"> <!-- ✅ Clicking the image will go to 'main.html' -->
+      <img src="images/eureka.png" alt="Welcome" class="entry-image"> <!-- ✅ Make sure 'images/eureka.png' exists -->
+    </a>
+    <div class="caption">✨  Click on the image to enter 🙏</div> <!-- ✅ Message below the image -->
+  </div>
+</body>
+
+</html>
